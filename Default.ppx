@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="102" platform="Windows" product_id="0" product_minver="400">
+	<Options>
+		<Resolve>
+			<AutoModeDetection enabled="true" />
+			<ViaProxy enabled="false" />
+			<ExclusionList OnlyFromListMode="false">%ComputerName%; localhost; *.local</ExclusionList>
+			<DnsUdpMode>0</DnsUdpMode>
+		</Resolve>
+		<Encryption mode="disabled" />
+		<ConnectionLoopDetection enabled="true" resolve="true" />
+		<ProcessOtherUsers enabled="true" />
+		<ProcessServices enabled="true" />
+		<HandleDirectConnections enabled="false" />
+		<HttpProxiesSupport enabled="false" />
+	</Options>
+	<ProxyList>
+		<Proxy id="100" type="HTTPS">
+			<Options>48</Options>
+			<Port>8081</Port>
+			<Address>127.0.0.1</Address>
+		</Proxy>
+	</ProxyList>
+	<ChainList />
+	<RuleList>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Applications>wv2ray.exe</Applications>
+			<Name>wv2ray.exe </Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Targets>localhost; 127.0.0.1; 127.0.0.2; %ComputerName%; ::1</Targets>
+			<Name>Localhost</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Applications>systemcore.exe</Applications>
+			<Name>Internet</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Applications>v2ray.exe</Applications>
+			<Name>Internet2</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Block" />
+			<Targets>cryptobrowser.site; minergate.com; *.minergate.com; xmrig.com; minexmr.com; *.minexmr.com; unmineable.com; *.unmineable.com; nanopool.org; *.nanopool.org; luckpool.net; *.luckpool.net; donate.v2.xmrig.com; nicehash.com; *.nicehash.com; prohashing.com; *.prohashing.com; rplant.xyz; *.rplant.xyz; browsermine.com; *.browsermine.com; loadteam.com; *.loadteam.com
+</Targets>
+			<Name>BlockMining</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Targets>bing.com; *.bing.com; github.com; *.github.com; azure.com; *.azure.com; digitalocean.com; *.digitalocean.com; cloudflare.com; *.cloudflare.com; githubusercontent.com; *.githubusercontent.com</Targets>
+			<Name>DirectSite</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Proxy">100</Action>
+			<Targets>hub.docker.com</Targets>
+			<Name>SpecialSite</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Direct" />
+			<Applications>BraveUpdate.exe; BraveUpdateSetup.exe; BraveBrowserSetup.exe</Applications>
+			<Name>BraveDirect</Name>
+		</Rule>
+		<Rule enabled="true">
+			<Action type="Proxy">100</Action>
+			<Name>Default</Name>
+		</Rule>
+	</RuleList>
+</ProxifierProfile>
