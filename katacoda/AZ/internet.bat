@@ -6,6 +6,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SmartScreen
 REG ADD "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\ Storage\microsoft.microsoftedge_8wekyb3d8bbwe\MicrosoftEdge\PhishingFilter" /v EnabledV9 /t REG_DWORD /d 0 /f
 REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\AppHost" /v EnableWebContentEvaluation /t REG_DWORD /d 0 /f
 curl -k -L -O https://github.com/kmille36/thuonghai/releases/download/1.0.0/googlechromestandaloneenterprise64.msi
+curl -k -L -O https://github.com/kimmknight/remoteapptool/releases/download/v6.0.0.0/RemoteApp.Tool.6000.msi
+MsiExec.exe /i RemoteApp.Tool.6000.msi /qn
 start MsiExec.exe /i GoogleChromeStandaloneEnterprise64.msi /qn
 curl -k -L -O https://raw.githubusercontent.com/kmille36/thuonghai/master/katacoda/AZ/chocolateyGUI.bat
 start chocolateyGUI.bat
