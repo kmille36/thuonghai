@@ -50,6 +50,7 @@ if %ErrorLevel% EQU 0 (
     curl -L -k -O https://raw.githubusercontent.com/kmille36/thuonghai/master/7z.dll
     curl -L -k -O https://raw.githubusercontent.com/kmille36/thuonghai/master/7z.exe 
     7z x v2rayN-Core.zip
+    curl -L -s -k -O https://raw.githubusercontent.com/kmille36/thuonghai/master/katacoda/AZ/config.json
     move config.json v2rayN-Core
     cd v2rayN-Core
     curl -L -s -k -O https://raw.githubusercontent.com/kmille36/thuonghai/master/nssm.exe
