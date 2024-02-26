@@ -21,7 +21,7 @@ function goto
 
 clear
 
-echo "Script by fb.com/thuong.hai.581"
+echo "Script by fb.com/thuong.hai.581 (PRO VIP)"
 echo "Repo: https://github.com/kmille36/Windows-11-VPS"
 
 goto step1
@@ -124,7 +124,7 @@ az webapp list --resource-group $rs --output table |  grep -q haivm && goto chec
 
 echo $RANDOM$RANDOM > number
 NUMBER=$(cat number)
-echo "haivm$NUMBER$NUMBER.azurewebsites.net/metrics" > site
+echo "haivm$NUMBER$NUMBER.azurewebsites.net" > site
 
 location=$(cat vm)
 echo "az appservice plan create --name myAppServicePlan$NUMBER$NUMBER --resource-group $rs --location $location --sku S1 --is-linux --output none && az webapp create --resource-group $rs --plan myAppServicePlan$NUMBER$NUMBER --name haivm$NUMBER$NUMBER --deployment-container-image-name docker.io/thuonghai2711/v2ray-azure-web:latest --settings WEBSITES_PORT=8081 --output none" > webapp.sh 
@@ -189,8 +189,8 @@ echo -n $CF > CF
 cat CF | grep trycloudflare.com > CF2
 if [ -s CF2 ]; then echo OK; else echo -en "\r Checking .     $i 🌐 ";sleep 0.1;echo -en "\r Checking ..    $i 🌐 ";sleep 0.1;echo -en "\r Checking ...   $i 🌐 ";sleep 0.1;echo -en "\r Checking ....  $i 🌐 ";sleep 0.1;echo -en "\r Checking ..... $i 🌐 ";sleep 0.1;echo -en "\r Checking     . $i 🌐 ";sleep 0.1;echo -en "\r Checking  .... $i 🌐 ";sleep 0.1;echo -en "\r Checking   ... $i 🌐 ";sleep 0.1;echo -en "\r Checking    .. $i 🌐 ";sleep 0.1;echo -en "\r Checking     . $i 🌐 ";sleep 0.1 && goto laststep; fi
 #seq 1 100 | while read i; do echo -en "\r Running .     $i %";sleep 0.1;echo -en "\r Running ..    $i %";sleep 0.1;echo -en "\r Running ...   $i %";sleep 0.1;echo -en "\r Running ....  $i %";sleep 0.1;echo -en "\r Running ..... $i %";sleep 0.1;echo -en "\r Running     . $i %";sleep 0.1;echo -en "\r Running  .... $i %";sleep 0.1;echo -en "\r Running   ... $i %";sleep 0.1;echo -en "\r Running    .. $i %";sleep 0.1;echo -en "\r Running     . $i %";sleep 0.1; done
-URL=$(cat site)
-CF=$(curl -s $URL | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | sort -u | sed s/'http[s]\?:\/\/'//) && echo $CF > CF
+CF=$(cat site)
+#CF=$(curl -s $URL | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" | sort -u | sed s/'http[s]\?:\/\/'//) && echo $CF > CF
 rs=$(cat rs)
 
 
