@@ -35,7 +35,7 @@ echo "   / \   |__  / | | |  _ \| ____|"
 echo "  / _ \    / /| | | | |_) |  _|  "
 echo " / ___ \  / /_| |_| |  _ <| |___ "
 echo "/_/   \_\/____|\___/|_| \_\_____|"
-echo    1.  HK -  East Asia
+echo    1.  SG -  South East Asia
 echo    2.  US -  East US
 echo    3.  EU -  West Europe 
 echo    4.  JP -  Japan East
@@ -43,7 +43,7 @@ echo    5.  AU -  Australia
 echo    6.  KR -  Korea South
 read -p "Please select your Azure VM region (type number then press enter):" ans
 case $ans in
-    1  )  echo "HK"; echo eastasia > vm  ;;
+    1  )  echo "HK"; echo southeastasia > vm  ;;
     2  )  echo "US"; echo eastus > vm  ;;
     3  )  echo "EU"; echo westeurope > vm  ;;
     4  )  echo "JP"; echo japaneast > vm  ;;
