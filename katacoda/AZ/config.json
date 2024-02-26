@@ -48,7 +48,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "documentary-bird-thomas-pix.trycloudflare.com",
+            "address": "CF",
             "port": 80,
             "users": [
               {
