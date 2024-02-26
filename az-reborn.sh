@@ -65,7 +65,7 @@ echo "   / \   |__  / | | |  _ \| ____|"
 echo "  / _ \    / /| | | | |_) |  _|  "
 echo " / ___ \  / /_| |_| |  _ <| |___ "
 echo "/_/   \_\/____|\___/|_| \_\_____|"
-echo "1. Windows Server 2022 + VS Code + VS Studio"
+echo "1. Windows Server 2022 Datacenter"
 echo "2. Windows 10 Enterprise + MS365 APP"
 echo "3. Windows 11 Enterprise + MS365 APP"
 echo "4. Windows 11 Azure Virtual Desktop"
@@ -76,7 +76,7 @@ echo "8. [NEW] Windows 11 Pro Insider Preview"
 echo "9. [NEW] Windows 11 AVD Insider Preview"
 read -p "Please select your Azure VM windows (type number then press enter):" ans
 case $ans in
-    1  )  echo "Windows Server 2022 + VS Code + VS Studio" > abc; echo MicrosoftVisualStudio:visualstudio2022:vs-2022-comm-latest-ws2022:2022.09.21 > win  ;;
+    1  )  echo "Windows Server 2022 Datacenter" > abc; echo MicrosoftWindowsServer:WindowsServer:2022-Datacenter:latest > win  ;;
     2  )  echo "Windows 10 Enterprise + MS365 APP" > abc; echo MicrosoftWindowsDesktop:windows-ent-cpc:win10-21h2-ent-cpc-m365:19044.1889.220810 > win  ;;
     3  )  echo "Windows 11 Enterprise + MS365 APP" > abc; echo MicrosoftWindowsDesktop:windows-ent-cpc:win11-21h2-ent-cpc-m365:22000.856.220810 > win  ;;
     4  )  echo "Windows 11 Azure Virtual Desktop" > abc; echo MicrosoftWindowsDesktop:windows-11:win11-21h2-avd:22000.978.220910 > win  ;;
@@ -102,12 +102,12 @@ echo "  / _ \    / /| | | | |_) |  _|  "
 echo " / ___ \  / /_| |_| |  _ <| |___ "
 echo "/_/   \_\/____|\___/|_| \_\_____|"
 echo "1. Standard_DS2_v2 - 2CPU/7GB - Suitable if you want VM with the highest performance"
-echo "2. Standard_B2ms - 2CPU/8GB - Suitable if you want VM with the highest performance and more ram"
+echo "2. Standard_D2s_v5 - 2CPU/8GB - Suitable if you want VM with the highest performance and more ram"
 echo "3. Standard_D2s_v3 - 2CPU/8GB - Slower than DS2_v2 and B2ms but have nested virtualization"
 read -p "Please select your Azure VM size (type number then press enter):" ans
 case $ans in
     1  )  echo "OK"; echo "Standard_DS2_v2" > size ;;
-    2  )  echo "OK"; echo "Standard_B2ms" > size ;;
+    2  )  echo "OK"; echo "Standard_D2s_v5" > size ;;
     3  )  echo "OK"; echo "Standard_D2s_v3" > size  ;;
     ""     )  echo "Empty choice!!!"; sleep 1; goto step3 ;;
     *      )  echo "Invalid choice!!!"; sleep 1 ; goto step3 ;;
