@@ -232,7 +232,7 @@ do
  
       case $input in
             [yY][eE][sS]|[yY])
-                  goto test
+                  goto rdp
                   break
                   ;;
             [nN][oO]|[nN])
