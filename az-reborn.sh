@@ -127,7 +127,7 @@ NUMBER=$(cat number)
 echo "haivm$NUMBER$NUMBER.azurewebsites.net/metrics" > site
 
 location=$(cat vm)
-echo "az appservice plan create --name myAppServicePlan$NUMBER$NUMBER --resource-group $rs --location $location --sku S1 --is-linux --output none && az webapp create --resource-group $rs --plan myAppServicePlan$NUMBER$NUMBER --name haivm$NUMBER$NUMBER --deployment-container-image-name docker.io/thuonghai2711/v2ray-azure-web:latest --output none" > webapp.sh 
+echo "az appservice plan create --name myAppServicePlan$NUMBER$NUMBER --resource-group $rs --location $location --sku S1 --is-linux --output none && az webapp create --resource-group $rs --plan myAppServicePlan$NUMBER$NUMBER --name haivm$NUMBER$NUMBER --deployment-container-image-name docker.io/thuonghai2711/v2ray-azure-web:latest --settings WEBSITES_PORT=8081 --output none" > webapp.sh 
 nohup bash webapp.sh  &>/dev/null &
 
 goto checkvm
